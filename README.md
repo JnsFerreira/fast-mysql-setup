@@ -91,6 +91,17 @@ You can implement new methods, such as executing queries, etc.
 
 In the file `src/conn_example.py`, we have a small demonstration of how to consume the class, where you basically have to supply the connection information.
 
+Edit the file, if needed
+
+```
+params = {'user': 'root',
+          'password': 'dockerIsAwesome',
+          'host': 'localhost',
+          'port':'3001',
+          'raise_on_warnings': True}
+```
+Now, just execute the python file
+
 ```
 python3 src/conn_example.py
 ```

@@ -3,7 +3,7 @@ from connection import Connection
 
 def main():
     params = {'user': 'root',
-              'password': 'just@2021',
+              'password': 'dockerIsAwesome',
               'host': 'localhost',
               'port':'3001',
               'raise_on_warnings': True}
