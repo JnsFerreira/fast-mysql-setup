@@ -45,7 +45,7 @@ $ sudo docker run -e MYSQL_ROOT_PASSWORD=dockerIsAwesome --name my_mysql_contain
 
 - `MYSQL_ROOT_PASSWORD` is the root password to access the database
 - `--name` is the name of container. It can be useful to easily start and stop the container.
-- `-p3001:3306` is the way to link the container port to a port on your computer. the basic syntax is `-p<container_port>:<local_port>`
+- `-p3001:3306` is the way to link the container port to a port on your computer. The basic syntax is `-p<container_port>:<local_port>`
 
 We are done! Now, let's connect to this database using Python 3.
 
@@ -72,18 +72,24 @@ $ virtualenv mysql_env
 If you haven't virtualenv, install it with `pip3 install virtualenv`
 
 
-4. Install the requirements
+4. Activate the enviroment
+
+```
+$ souce mysql_env/bin/activate
+```
+
+5. Install the requirements
 
 ```
 $ pip3 install -r requirements.txt
 ```
 
-5. Test the connection with MySQL Database
+6. Test the connection with MySQL Database
 
 I already wrote a small class that makes the connection to the database.
 You can implement new methods, such as executing queries, etc.
 
-In the file `conn_example`, we have a small demonstration of how to consume the class, where you basically have to supply the connection information.
+In the file `src/conn_example.py`, we have a small demonstration of how to consume the class, where you basically have to supply the connection information.
 
 ```
 python3 src/conn_example.py
@@ -92,9 +98,22 @@ python3 src/conn_example.py
 If the connection was successful, you will see somenthing like this:
 
 ```
-
+<mysql.connector.connection_cext.CMySQLConnection object at 0x7f09f7de9d00>
 ```
 
+Now, you're able to create tables, insert data, etc.
 
 
+Last and not least, to stop your container at end of day:
 
+```
+$ sudo docker stop my_mysql_container
+```
+
+To start your work again:
+
+```
+$ sudo docker start my_mysql_container
+```
+
+Enjoy :)
