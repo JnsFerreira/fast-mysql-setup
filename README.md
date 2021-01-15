@@ -9,7 +9,7 @@ Here we are using the tech stack mentioned above, but with this concepts, you ca
 ## Getting Started
 
 
-### Instalation
+### Installation
 
 All the installation process was made with on Ubuntu (A linux based system, that you should use). For windows instalation of docker, please follow [this](https://docs.docker.com/docker-for-windows/install/) documentation
  
@@ -29,7 +29,7 @@ $ sudo apt-get install docker docker.io
 $ sudo docker pull mysql
 ```
 
-**Tip**: You can get more docker images at [DockerHub]()
+**Tip**: You can get more docker images at [DockerHub](https://hub.docker.com/)
 
 3. Check available images
 
@@ -50,6 +50,51 @@ $ sudo docker run -e MYSQL_ROOT_PASSWORD=dockerIsAwesome --name my_mysql_contain
 We are done! Now, let's connect to this database using Python 3.
 
 ### Usage
+
+1. Clone this repository to your computer
+
+```
+$ git clone https://github.com/JnsFerreira/fast-mysql-setup.git
+```
+
+2. Go to repo directory
+
+```
+$ cd fast-mysql-setup
+```
+
+3. Create a virtualenv 
+
+```
+$ virtualenv mysql_env
+```
+
+If you haven't virtualenv, install it with `pip3 install virtualenv`
+
+
+4. Install the requirements
+
+```
+$ pip3 install -r requirements.txt
+```
+
+5. Test the connection with MySQL Database
+
+I already wrote a small class that makes the connection to the database.
+You can implement new methods, such as executing queries, etc.
+
+In the file `conn_example`, we have a small demonstration of how to consume the class, where you basically have to supply the connection information.
+
+```
+python3 src/conn_example.py
+```
+
+If the connection was successful, you will see somenthing like this:
+
+```
+
+```
+
 
 
 
